@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2022 - 07",
+    "infoCount": 32,
+    "warningCount": 6,
+    "errorCount": 10,
+    "warningPercentageChange": "0%",
+    "errorPercentageChange": "0%"
+  },
+  {
+    "date": "2022 - 08",
+    "infoCount": 34,
+    "warningCount": 9,
+    "errorCount": 4,
+    "warningPercentageChange": "50%",
+    "errorPercentageChange": "-60%"
+  },
+  {
+    "date": "2022 - 09",
+    "infoCount": 25,
+    "warningCount": 8,
+    "errorCount": 5,
+    "warningPercentageChange": "-11.11%",
+    "errorPercentageChange": "25%"
+  }
+]
