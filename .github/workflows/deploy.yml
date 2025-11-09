@@ -6,11 +6,11 @@
         - main
 
   jobs:
-    permissions:
-      id-token: write
-      pages: write
     build-and-deploy:
       runs-on: ubuntu-latest
+      permissions:
+        id-token: write
+        pages: write
       steps:
         - name: Checkout code
           uses: actions/checkout@v4
