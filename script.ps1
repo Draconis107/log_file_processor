@@ -88,13 +88,61 @@ $html = @"
 <html>
 <body>
 <h1>Report</h1>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f7;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+    }
+
+    .month {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .month h3 {
+        margin-top: 0;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 5px;
+        color: #444;
+    }
+
+    .month p {
+        margin: 6px 0;
+        font-size: 14px;
+    }
+
+    .month p span.label {
+        font-weight: bold;
+        color: #222;
+    }
+
+    /* Color accents */
+    .info { color: #2d89ef; }
+    .warn { color: #f39c12; }
+    .err  { color: #e74c3c; }
+</style>
 "@
 
 foreach ($month in $report) {
+    $html += "<div class='month'>"
     $html += ("<h3>" + $month.date + "</h3>")
-    $html += ("<p> Info: " + $month.infoCount + "</p>")
-    $html += ("<p> Warning: " + $month.warningCount + " | Change from last month: " + $month.warningPercentageChange + "</p>")
-    $html += ("<p> Error: " + $month.errorCount + " | Change from last month: " + $month.errorPercentageChange + "</p>")
+    $html += ("<p class='info'><span class='label'>Info:</span> " + $month.infoCount + "</p>")
+    $html += ("<p class='warn'><span class='label'>Warning:</span> " + $month.warningCount + " | Change from last month: " + $month.warningPercentageChange + "</p>")
+    $html += ("<p class='err'><span class='label'>Error:</span> " + $month.errorCount + " | Change from last month: " + $month.errorPercentageChange + "</p>")
+    $html += "</div>"
 }
 
 $html += @"
